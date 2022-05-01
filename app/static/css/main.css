@@ -1,0 +1,52 @@
+body {
+  display: flex;
+  /* flex-direction: column; */
+  /* justify-content: space-between; */
+  /* min-height: 100vh; */
+}
+
+h5.card-title a {
+  color: #000000;
+  text-decoration: none;
+}
+
+main {
+  padding: 1.5rem 0;
+}
+
+p.card-text {
+  color: #000000;
+}
+
+.character-card {
+  padding-top: 0.9rem;
+}
+
+.character-container {
+  padding: 0.6rem;
+}
+
+.character-footer {
+  margin: 0 0 1.25rem;
+}
+
+.character-img {
+  height: 20rem;
+  width: 20rem;
+  object-fit: cover;
+}
+
+.image {
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.logo {
+  height: 2.5rem;
+  margin-left: 0.9rem;
+}
+
+.profile {
+  align-items: center;
+}

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %} Collection {% endblock %}
+{% block content %}
+
+<div class="row profile justify-content-center mt-5">
+
+  <!-- Search -->
+  <div class="col-8">
+    <div class="container" style="text-align: center">
+
+      <h4>Search for a character and add to your collection</h2>
+
+        <form class="row row-cols-lg-auto g-3 mt-2 align-items-center"
+          action="{{ url_for('authentication.collection') }}" method="POST" style="justify-content: center">
+
+          <div class="col-lg-6">
+            <div class="input-group">
+              <input type="text" class="form-control" name="character_name" placeholder="Character Name">
+            </div>
+          </div>
+
+          <div class="col-12">
+            <input type="submit" value="Add Character" class="btn btn-sm btn-dark btn-block">
+          </div>
+        </form>
+    </div>
+  </div>
+
+  <div class="character-container row justify-content-center mt-5">
+    {% for character in characters %}
+    {% if character.user_id == current_user.id %}
+    <div class="character-card card card text-warning mb-3 col-3">
+      <a href="{{ url_for('authentication.single_character', id=character.id) }}">
+        <img class="character-img card-img-top" src="{{ character.image }}" alt="{{ character.name|title }}">
+      </a>
+      <div class="character-box card-body">
+        <h5 class="character-name card-title">
+          <a href="{{ url_for('authentication.single_character', id=character.id) }}">
+            {{ character.name|title }}
+          </a>
+        </h5>
+        <p class="character-description card-text">{{ character.description }}</p>
+      </div>
+      <div class="character-footer">
+        <center>
+          <a href="{{ url_for('authentication.delete', id=character.id) }}" class="btn btn-sm btn-danger" role="button"
+            data-bs-toggle="button">Delete</a>
+        </center>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+</div>
+
+{% endblock %}

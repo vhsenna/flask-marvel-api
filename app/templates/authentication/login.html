@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %} Login {% endblock %}
+{% block content %}
+
+<div class="row profile justify-content-center mt-5">
+
+  <div class="col-4">
+
+    <h4>Login</h4>
+
+    <form action="{{ url_for('authentication.login') }}" method="POST">
+
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" name="email" placeholder="Email">
+        <label for="floatingInput">Email</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" name="password" placeholder="Password">
+        <label for="floatingInput">Password</label>
+      </div>
+
+      <button type="submit" value="Login" class="btn btn-sm btn-dark btn-block">
+        <a>Submit</a>
+      </button>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

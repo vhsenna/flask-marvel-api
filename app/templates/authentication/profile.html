@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %} Profile {% endblock %}
+{% block content %}
+
+<div class="row profile justify-content-center mt-5">
+
+  <div class="col-4">
+
+    <h4>Edit Profile</h4>
+
+    <form action="{{ url_for('authentication.profile') }}" method="POST">
+
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" value="{{ current_user.first_name }}" name="first_name"
+          placeholder="First Name">
+        <label for="floatingInput">First Name</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" value="{{ current_user.last_name }}" name="last_name"
+          placeholder="Last Name">
+        <label for="floatingInput">Last Name</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" value="{{ current_user.email }}" name="email" placeholder="Email">
+        <label for="floatingInput">Email</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" name="password" placeholder="Password">
+        <label for="floatingInput">Password</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" name="password2" placeholder="Confirm Password">
+        <label for="floatingInput">Confirm Password</label>
+      </div>
+
+      <input type="submit" value="Update" class="btn btn-sm btn-dark btn-block">
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
