@@ -1,10 +1,8 @@
 # Flask Marvel API
 
-Website made with Python and Flask consuming Marvel API data.
+Web application developed using Python and Flask to connect with [Marvel API Developers](https://developer.marvel.com/docs).
 
 Users may register to create a collection of heroes and save them.
-
-Marvel API is available at https://developer.marvel.com/docs.
 
 ## Made with:
 
